@@ -1,2 +1,11 @@
+<<<<<<< HEAD
 .env
 .venv
+=======
+.docker
+BE/.env
+venv
+flask-gemini-app.tar
+.DS_Store
+>>>>>>> b8c1c3cd69b0493ea47865cb493a48238ea2b2b4
+.DS_Store

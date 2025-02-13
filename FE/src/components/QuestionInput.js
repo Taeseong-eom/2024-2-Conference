@@ -19,7 +19,7 @@ const QuestionInput = ({ onSubmit }) => {
         type="text"
         value={question}
         onChange={handleInputChange}
-        placeholder="Ask a question"
+        placeholder="여기에 입력하세요"
         required
       />
       <button type="submit">Submit</button>
