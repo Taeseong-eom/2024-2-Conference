@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, Response
 from flask_cors import CORS
 from dotenv import load_dotenv
 import google.generativeai as genai
@@ -7,6 +7,7 @@ import re
 from datetime import datetime, timedelta
 from pymongo import MongoClient
 from langchain.tools import Tool
+import json
 
 # 환경 변수 로드
 load_dotenv()
@@ -148,7 +149,9 @@ def ask():
     except Exception as e:
         answer = f"An error occurred: {str(e)}"
 
-    return jsonify({"answer": answer})
-
+    return Response(
+        json.dumps({"answer": answer}, ensure_ascii=False),
+        content_type="application/json; charset=utf-8"
+    )
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=False)
